@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns">
+            <referenceContainer name="div.sidebar.main">
+                <block class="AlexModules\CurrencyConverter\Block\ExchangeRate" name="exchangeRate" template="AlexModules_CurrencyConverter::exchangeRate.phtml" />
+            </referenceContainer>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="AlexModules\CurrencyConverter\Block\Converter" name="converter" template="AlexModules_CurrencyConverter::converter.phtml" />
+        </referenceContainer>
+    </body>
+</page>
