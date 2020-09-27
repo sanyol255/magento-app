@@ -253,6 +253,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'AlexModules_CurrencyConverter' => 1,
         'AlexModules_HelloWorld' => 1,
+        'AlexModules_Newsletter' => 1,
         'Amazon_Core' => 1,
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,

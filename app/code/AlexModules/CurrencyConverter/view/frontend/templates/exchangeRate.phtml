@@ -3,7 +3,7 @@ $currencyRate = $this->getCurrency();
 ?>
 <div class="exchange-rate">
     <h2>Курс валют: </h2>
-    <p>Долар: <?= $currencyRate->dollarExchangeRate(); ?> грн</p>
-    <p>Євро: <?= $currencyRate->euroExchangeRate(); ?> грн</p>
-    <p>Рубль: <?= $currencyRate->roubleExchangeRate(); ?> грн</p>
+    <p><?= $currencyRate->dollarExchangeRate(); ?> грн</p>
+    <p><?= $currencyRate->euroExchangeRate(); ?> грн</p>
+    <p><?= $currencyRate->roubleExchangeRate(); ?> грн</p>
 </div>

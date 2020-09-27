@@ -10,16 +10,16 @@ class CurrencyData
 
     public function dollarExchangeRate()
     {
-        return $this->dollar;
+        return 'Долар: ' . $this->dollar;
     }
 
     public function euroExchangeRate()
     {
-        return $this->euro;
+        return 'Євро: ' . $this->euro;
     }
 
     public function roubleExchangeRate()
     {
-        return $this->rouble;
+        return 'Рубль: ' . $this->rouble;
     }
 }
