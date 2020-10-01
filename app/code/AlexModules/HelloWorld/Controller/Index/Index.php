@@ -1,5 +1,12 @@
 <?php
+/**
+ * Controller for HelloWorld Action
 
+ * @category  AlexModules
+ * @package   AlexModules\HelloWorld
+ * @author    Kovalchuk Oleksandr sanyol255@gmail.com
+ * @copyright 2020 Alex
+ */
 namespace AlexModules\HelloWorld\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
@@ -7,6 +14,10 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
 
+/**
+ * Class Index
+ * @package AlexModules\HelloWorld\Controller\Index
+ */
 class Index extends Action {
     /**
      * @var PageFactory
