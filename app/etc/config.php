@@ -251,6 +251,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
+        'AlexModules_CopyrightInfo' => 1,
         'AlexModules_CurrencyConverter' => 1,
         'AlexModules_HelloWorld' => 1,
         'AlexModules_Newsletter' => 1,
