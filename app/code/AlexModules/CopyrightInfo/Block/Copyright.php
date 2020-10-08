@@ -40,7 +40,6 @@ class Copyright extends Template
      */
     public function getCopyright()
     {
-        return __('%2, %1, %3', $this->getCompanyName(), $this->getFoundationDate(), date('M d, Y'));
-//        return __($this->company . ' ' . $this->foundationDate . ' - ' . date('M d, Y'));
+        return __('%1, %2 - %3', $this->getCompanyName(), $this->getFoundationDate(), date('M d, Y'));
     }
 }
