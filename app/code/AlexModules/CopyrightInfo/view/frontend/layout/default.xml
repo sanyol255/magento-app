@@ -3,6 +3,10 @@
     <body>
         <referenceContainer name="before.body.end">
             <block class="Magento\Theme\Block\Html\Footer" name="absolute_footer" template="AlexModules_CopyrightInfo::copyright.phtml">
+                <arguments>
+                    <argument name="company_name" xsi:type="string">Unix Corporation</argument>
+                    <argument name="foundation_date" xsi:type="string">January 01, 1970</argument>
+                </arguments>
             </block>
         </referenceContainer>
         <referenceBlock name="copyright" remove="true"/>

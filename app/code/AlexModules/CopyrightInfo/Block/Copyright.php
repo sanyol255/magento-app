@@ -21,11 +21,11 @@ class Copyright extends Template
     /**
      * @var string
      */
-    private $company = 'Unix Corp. ';
+//    private $company = 'Unix Corp. ';
     /**
      * @var string
      */
-    private $foundationDate = ' Jan 01, 1970';
+//    private $foundationDate = ' Jan 01, 1970';
     /**
      * Copyright constructor.
      * @param Context $context
@@ -40,6 +40,7 @@ class Copyright extends Template
      */
     public function getCopyright()
     {
-        return __($this->company . ' ' . $this->foundationDate . ' - ' . date('M d, Y'));
+        return __('%2, %1, %3', $this->getCompanyName(), $this->getFoundationDate(), date('M d, Y'));
+//        return __($this->company . ' ' . $this->foundationDate . ' - ' . date('M d, Y'));
     }
 }
