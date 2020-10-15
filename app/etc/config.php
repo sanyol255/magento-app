@@ -255,6 +255,7 @@ return [
         'AlexModules_CurrencyConverter' => 1,
         'AlexModules_HelloWorld' => 1,
         'AlexModules_Newsletter' => 1,
+        'AlexModules_PremiumAccess' => 1,
         'AlexModules_PricePrecision' => 1,
         'AlexModules_ProductData' => 1,
         'Amazon_Core' => 1,
