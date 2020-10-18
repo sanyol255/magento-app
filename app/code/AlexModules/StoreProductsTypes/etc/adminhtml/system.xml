@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="store_products_types" translate="label tab" sortOrder="140" showInDefault="1" showInStore="1" showInWebsite="1">
+            <label>Store Products Types</label>
+            <tab>sales</tab>
+            <resource>Magento_Backend::admin</resource>
+
+            <group id="store"  translate="label" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1">
+                <label>Store</label>
+                <field id="name" translate="label comment" type="text" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20">
+                    <label>Store name</label>
+<!--                    <source_model>AlexModules\PremiumAccess\Model\PremiumAccessCustomOptions</source_model>-->
+                </field>
+                <field id="description" translate="label comment" type="text" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30">
+                    <label>Store description</label>
+                    <comment>Short store description</comment>
+                </field>
+            </group>
+
+            <group id="store_types"  translate="label" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1">
+                <label>Store products types</label>
+
+                <field id="is_monotyped" translate="label" type="select" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50">
+                    <label>Store type</label>
+                    <source_model>AlexModules\StoreProductsTypes\Model\CustomOptions</source_model>
+                </field>
+
+                <field id="monotype" type="select" translate="label" showInWebsite="1" showInStore="1" showInDefault="1" sortOrder="60">
+                    <label>Choose a type for store</label>
+                    <source_model>AlexModules\StoreProductsTypes\Model\ProductTypes</source_model>
+                    <depends>
+                        <field id="store_products_types/store_types/is_monotyped">1</field>
+                    </depends>
+                </field>
+
+                <field id="polytype" type="multiselect" translate="label" showInWebsite="1" showInStore="1" showInDefault="1" sortOrder="70">
+                    <label>Choose types for store</label>
+                    <source_model>AlexModules\StoreProductsTypes\Model\ProductTypes</source_model>
+                    <depends>
+                        <field id="store_products_types/store_types/is_monotyped">0</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
