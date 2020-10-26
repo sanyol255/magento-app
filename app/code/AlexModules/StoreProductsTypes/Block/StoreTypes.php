@@ -21,12 +21,27 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class StoreTypes extends Template
 {
+    /**
+     * @var ScopeConfigInterface
+     */
     protected $scopeConfig;
+
+    /**
+     * StoreTypes constructor.
+     * @param Context $context
+     * @param ScopeConfigInterface $scopeConfig
+     * @param array $data
+     */
     public function __construct(Context $context, ScopeConfigInterface $scopeConfig, array $data = [])
     {
         parent::__construct($context, $data);
         $this->scopeConfig = $scopeConfig;
     }
+
+    /**
+     * @return array
+     * Array data with store name, description and type(s) for outputting in storetypes/index/index
+     */
     public function getStore()
     {
         $storeName = $this->scopeConfig->getValue('store_products_types/store/name');

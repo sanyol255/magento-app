@@ -10,8 +10,15 @@ namespace AlexModules\StoreProductsTypes\Model;
 
 use Magento\Framework\Option\ArrayInterface;
 
+/**
+ * Class ProductTypes
+ * @package AlexModules\StoreProductsTypes\Model
+ */
 class ProductTypes implements ArrayInterface
 {
+    /**
+     * @return array|\string[][]
+     */
     public function toOptionArray()
     {
         return [

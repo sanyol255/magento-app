@@ -25,22 +25,22 @@ class Index extends Action
      */
     private $pageFactory;
 
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
     public function __construct(Context $context, PageFactory $pageFactory)
     {
-        /**
-         * @param Context $context
-         * @param PageFactory $pageFactory
-         */
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
     }
 
+    /**
+     * @return ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
+     */
     public function execute()
     {
-        /**
-         * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
-         * @throws \Magento\Framework\Exception\NotFoundException
-         */
         $page = $this->pageFactory->create();
         return $page;
     }
