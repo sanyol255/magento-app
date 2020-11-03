@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+        <table name="customer_survey" resource="default" engine="innodb" comment="Customers survey for improving sales">
+            <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="primary key" />
+            <column xsi:type="varchar" name="customer_name" length="50" comment="Customer name" />
+            <column xsi:type="int" name="customer_age" padding="3" unsigned="true" comment="Customer age" />
+            <column xsi:type="varchar" name="customer_email" length="100" comment="Customer email" />
+            <column xsi:type="varchar" name="favorite_store_section" length="50" comment="Favorite store section" />
+            <column xsi:type="varchar" name="preferred_payment_method" length="50" comment="Preferred payment method for making purchases" />
+            <column xsi:type="text" name="desirable_store_section" comment="Customers suggestions for store sections" />
+            <column xsi:type="varchar" name="average_monthly_spending" length="10" comment="Average monthly amount of money that customer is ready to spend" />
+            <constraint xsi:type="primary" referenceId="PRIMARY">
+                <column name="id" />
+            </constraint>
+        </table>
+</schema>

@@ -45,11 +45,3 @@ class Store extends Action
         print 'Feedback was successfully added!';
     }
 }
-
-
-
-
-
-
-
-

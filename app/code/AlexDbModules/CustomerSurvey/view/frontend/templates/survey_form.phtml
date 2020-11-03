@@ -1,0 +1,51 @@
+<?php
+/* @var \AlexDbModules\CustomerSurvey\Block\SurveyForm $block */
+?>
+<h2>Please, take our survey and help us become better :)</h2>
+<form action="<?= $block->getFormAction(); ?>" method="post">
+    <div>
+        <label for="customer_name">Enter your name: </label>
+        <input type="text" name="customer_name" id="customer_name">
+    </div>
+    <div>
+        <label for="customer_age">Enter your age: </label>
+        <input type="number" name="customer_age" id="customer_age">
+    </div>
+    <div>
+        <label for="customer_email">Enter your email address:</label>
+        <input type="text" name="customer_email" id="customer_email">
+    </div>
+    <div>
+        <label for="favorite_store_section">Choose your favorite store section: </label>
+        <select name="favorite_store_section" id="favorite_store_section">
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+            <option value="gear">Gear</option>
+            <option value="training">Training</option>
+        </select>
+    </div>
+    <div>
+        <label for="preferred_payment_method">Choose your preferred payment method: </label>
+        <select name="preferred_payment_method" id="preferred_payment_method">
+            <option value="paypal">PayPal</option>
+            <option value="skrill">Skrill</option>
+            <option value="amazonpay">Amazon Pay</option>
+            <option value="googlepay">Google Pay</option>
+        </select>
+    </div>
+    <div>
+        <label for="desirable_store_section">Type what new section would you like to see in our store and what should be there: </label>
+        <textarea name="desirable_store_section" id="desirable_store_section" cols="30" rows="4"></textarea>
+    </div>
+    <div>
+        <label for="average_monthly_spending">Enter amount of money you are ready to spend monthly in our store: </label><br>
+        <select name="currency_sign" id="currency_sign" style="width:50px;">
+            <option value="$">$</option>
+            <option value="€" selected>€</option>
+            <option value="£">£</option>
+        </select>
+        <input type="number" name="amount_of_money" id="amount_of_money" style="width:100px;">
+    </div>
+    <br>
+    <div><input type="submit" name="submit_survey" value="Submit survey"></div>
+</form>
