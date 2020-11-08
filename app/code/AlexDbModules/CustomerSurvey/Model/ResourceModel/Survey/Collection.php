@@ -10,6 +10,8 @@
 namespace AlexDbModules\CustomerSurvey\Model\ResourceModel\Survey;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use AlexDbModules\CustomerSurvey\Model\Survey;
+use AlexDbModules\CustomerSurvey\Model\ResourceModel\Survey as ResourceSurvey;
 
 /**
  * Class Collection
@@ -22,6 +24,6 @@ class Collection extends AbstractCollection
      */
     public function _construct()
     {
-        $this->_init('AlexDbModules\CustomerSurvey\Model\Survey', 'AlexDbModules\CustomerSurvey\Model\ResourceModel\Survey');
+        $this->_init(Survey::class, ResourceSurvey::class);
     }
 }

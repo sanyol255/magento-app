@@ -9,7 +9,7 @@
             <column xsi:type="varchar" name="favorite_store_section" length="50" comment="Favorite store section" />
             <column xsi:type="varchar" name="preferred_payment_method" length="50" comment="Preferred payment method for making purchases" />
             <column xsi:type="text" name="desirable_store_section" comment="Customers suggestions for store sections" />
-            <column xsi:type="varchar" name="average_monthly_spending" length="10" comment="Average monthly amount of money that customer is ready to spend" />
+            <column xsi:type="varchar" name="average_monthly_spending" length="50" comment="Average monthly amount of money that customer is ready to spend" />
             <constraint xsi:type="primary" referenceId="PRIMARY">
                 <column name="id" />
             </constraint>

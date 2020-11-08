@@ -19,7 +19,10 @@ use Magento\Framework\View\Element\Template\Context;
  */
 class SurveyForm extends Template
 {
-    const ACTION_PATH = '/survey/customersurvey/store';
+    /**
+     *Path to action for writing form data to database
+     */
+    const FORM_ACTION = '/survey/customersurvey/store';
     /**
      * SurveyForm constructor.
      * @param Context $context
@@ -35,6 +38,6 @@ class SurveyForm extends Template
      */
     public function getFormAction()
     {
-        return self::ACTION_PATH;
+        return self::FORM_ACTION;
     }
 }

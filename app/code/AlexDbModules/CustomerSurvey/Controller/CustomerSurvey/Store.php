@@ -9,10 +9,10 @@
  */
 namespace AlexDbModules\CustomerSurvey\Controller\CustomerSurvey;
 
+use AlexDbModules\CustomerSurvey\Api\Data\SurveyInterfaceFactory;
+use AlexDbModules\CustomerSurvey\Api\SurveyRepositoryInterface;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\Controller\ResultFactory;
-use Magento\Framework\ObjectManagerInterface;
 
 /**
  * Class Store
@@ -21,33 +21,45 @@ use Magento\Framework\ObjectManagerInterface;
 class Store extends Action
 {
     /**
+     * @var SurveyInterfaceFactory
+     */
+    protected $surveyInterfaceFactory;
+    /**
+     * @var SurveyRepositoryInterface
+     */
+    protected $surveyRepository;
+
+    /**
      * Store constructor.
      * @param Context $context
-     * @param ObjectManagerInterface $objectManager
-     * @param ResultFactory $resultFactory
+     * @param SurveyInterfaceFactory $surveyInterfaceFactory
+     * @param SurveyRepositoryInterface $surveyRepository
      */
-    public function __construct(Context $context, ObjectManagerInterface $objectManager, ResultFactory $resultFactory)
-    {
+    public function __construct(
+        Context $context,
+        SurveyInterfaceFactory $surveyInterfaceFactory,
+        SurveyRepositoryInterface $surveyRepository
+    ) {
         parent::__construct($context);
-        $this->_objectManager = $objectManager;
+        $this->surveyInterfaceFactory = $surveyInterfaceFactory;
+        $this->surveyRepository = $surveyRepository;
     }
 
     /**
+     * Creating model object, assigning data from form to it and saving data to database with repository
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
      */
     public function execute()
     {
-        $post = (array) $this->getRequest()->getPost();
-        $surveyData = $this->_objectManager->create('AlexDbModules\CustomerSurvey\Model\Survey');
-
-        $surveyData->setData('customer_name', $post['customer_name']);
-        $surveyData->setData('customer_age', $post['customer_age']);
-        $surveyData->setData('customer_email', $post['customer_email']);
-        $surveyData->setData('favorite_store_section', $post['favorite_store_section']);
-        $surveyData->setData('preferred_payment_method', $post['preferred_payment_method']);
-        $surveyData->setData('desirable_store_section', $post['desirable_store_section']);
-        $surveyData->setData('average_monthly_spending', $post['currency_sign'] . $post['amount_of_money']);
-        $surveyData->save();
+        $model = $this->surveyInterfaceFactory->create();
+        $model->setName($this->getRequest()->getParam('customer_name'))
+              ->setAge($this->getRequest()->getParam('customer_age'))
+              ->setEmail($this->getRequest()->getParam('customer_email'))
+              ->setFavoriteStoreSection($this->getRequest()->getParam('favorite_store_section'))
+              ->setPaymentMethod($this->getRequest()->getParam('preferred_payment_method'))
+              ->setDesirableStoreSection($this->getRequest()->getParam('desirable_store_section'))
+              ->setAverageMonthlySpending($this->getRequest()->getParam('average_monthly_spending'));
+        $this->surveyRepository->save($model);
 
         $this->_redirect('survey/customersurvey/result');
     }

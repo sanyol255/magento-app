@@ -12,28 +12,30 @@ namespace AlexDbModules\CustomerSurvey\Controller\CustomerSurvey;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Index
  * @package AlexDbModules\CustomerSurvey\Controller\Index
  */
-class Index extends Action
+class Index extends Action implements HttpGetActionInterface, HttpPostActionInterface
 {
     /**
      * @var PageFactory
      */
-    protected $surveyFactory;
+    protected $surveyFormFactory;
 
     /**
      * Index constructor.
      * @param Context $context
-     * @param PageFactory $surveyFactory
+     * @param PageFactory $surveyFormFactory
      */
-    public function __construct(Context $context, PageFactory $surveyFactory)
+    public function __construct(Context $context, PageFactory $surveyFormFactory)
     {
         parent::__construct($context);
-        $this->surveyFactory = $surveyFactory;
+        $this->surveyFormFactory = $surveyFormFactory;
     }
 
     /**
@@ -41,7 +43,7 @@ class Index extends Action
      */
     public function execute()
     {
-        $surveyForm = $this->surveyFactory->create();
-        return $surveyForm;
+        $survey = $this->surveyFormFactory->create();
+        return $survey;
     }
 }

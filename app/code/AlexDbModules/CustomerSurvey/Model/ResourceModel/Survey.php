@@ -9,6 +9,7 @@
  */
 namespace AlexDbModules\CustomerSurvey\Model\ResourceModel;
 
+use AlexDbModules\CustomerSurvey\Api\Data\SurveyInterface;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
@@ -22,6 +23,6 @@ class Survey extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('customer_survey', 'id');
+        $this->_init('customer_survey', SurveyInterface::ID);
     }
 }
