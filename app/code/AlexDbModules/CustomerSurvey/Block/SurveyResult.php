@@ -12,6 +12,7 @@ namespace AlexDbModules\CustomerSurvey\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use AlexDbModules\CustomerSurvey\ViewModel\SurveyResultsList as SurveyResultsViewModel;
 
 /**
  * Class SurveyResult
@@ -20,13 +21,27 @@ use Magento\Framework\View\Element\Template\Context;
 class SurveyResult extends Template
 {
     /**
+     * @var SurveyResultsViewModel
+     */
+    protected $surveyResultsViewModel;
+    /**
      * SurveyResult constructor.
      * @param Context $context
      * @param array $data
      */
-    public function __construct(Context $context, array $data = [])
+    public function __construct(Context $context, SurveyResultsViewModel $surveyResultsViewModel, array $data = [])
     {
         parent::__construct($context, $data);
+        $this->surveyResultsViewModel = $surveyResultsViewModel;
+    }
+
+    /**
+     * @return mixed
+     * Method that outputs survey data from database
+     */
+    public function getSurveyList()
+    {
+        return $this->surveyResultsViewModel->getSurveyResults();
     }
 
 }

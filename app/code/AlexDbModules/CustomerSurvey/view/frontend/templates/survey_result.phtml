@@ -1,1 +1,31 @@
+<?php
+/* @var \AlexDbModules\CustomerSurvey\Block\SurveyResult $block */
+?>
+
 <h2>Thank you for taking our survey!</h2>
+<h3>Here are results from others humans: </h3>
+
+<table>
+    <thead>
+    <tr>
+        <th><?= __('Customer name'); ?></th>
+        <th><?= __('Customer age'); ?></th>
+        <th><?= __('Customer email'); ?></th>
+        <th><?= __('Favorite section'); ?></th>
+        <th><?= __('Preferred payment method'); ?></th>
+        <th><?= __('Monthly spending'); ?></th>
+    </tr>
+    </thead>
+    <?php foreach ($block->getSurveyList()->getItems() as $item) { ?>
+        <tbody>
+        <tr>
+            <td><?= __($item->getName()); ?></td>
+            <td><?= __($item->getAge()); ?></td>
+            <td><?= __($item->getEmail()); ?></td>
+            <td><?= __($item->getFavoriteStoreSection()); ?></td>
+            <td><?= __($item->getPaymentMethod()); ?></td>
+            <td><?= __($item->getAverageMonthlySpending()); ?></td>
+        </tr>
+        </tbody>
+    <?php } ?>
+</table>
