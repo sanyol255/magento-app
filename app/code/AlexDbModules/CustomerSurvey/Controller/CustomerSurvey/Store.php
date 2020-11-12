@@ -55,7 +55,7 @@ class Store extends Action
         $model->setName($this->getRequest()->getParam('customer_name'))
               ->setAge($this->getRequest()->getParam('customer_age'))
               ->setEmail($this->getRequest()->getParam('customer_email'))
-              ->setFavoriteStoreSection($this->getRequest()->getParam('favorite_store_section'))
+              ->setFavoriteStoreSectionId((int)$this->getRequest()->getParam('favorite_store_section_id'))
               ->setPaymentMethod($this->getRequest()->getParam('preferred_payment_method'))
               ->setDesirableStoreSection($this->getRequest()->getParam('desirable_store_section'))
               ->setAverageMonthlySpending($this->getRequest()->getParam('average_monthly_spending'));

@@ -19,7 +19,7 @@ interface SurveyInterface
     const NAME = 'customer_name';
     const AGE = 'customer_age';
     const EMAIL = 'customer_email';
-    const FAVORITE_STORE_SECTION = 'favorite_store_section';
+    const FAVORITE_STORE_SECTION_ID = 'favorite_store_section_id';
     const PAYMENT_METHOD = 'preferred_payment_method';
     const DESIRABLE_STORE_SECTION = 'desirable_store_section';
     const MONTHLY_SPENDING = 'average_monthly_spending';
@@ -40,9 +40,9 @@ interface SurveyInterface
     public function getEmail() : string;
 
     /**
-     * @return string
+     * @return int
      */
-    public function getFavoriteStoreSection() : string;
+    public function getFavoriteStoreSectionId() : int;
 
     /**
      * @return string
@@ -78,10 +78,10 @@ interface SurveyInterface
     public function setEmail(string $email) : self;
 
     /**
-     * @param string $favoriteStoreSection
+     * @param int $favoriteStoreSectionId
      * @return $this
      */
-    public function setFavoriteStoreSection(string $favoriteStoreSection) : self;
+    public function setFavoriteStoreSectionId(int $favoriteStoreSectionId) : self;
 
     /**
      * @param string $paymentMethod

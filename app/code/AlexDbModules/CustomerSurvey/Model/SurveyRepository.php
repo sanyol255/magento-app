@@ -44,7 +44,7 @@ class SurveyRepository implements SurveyRepositoryInterface
     /**
      * @var SearchResultsInterfaceFactory
      */
-    protected $searchResultFactory;
+    protected $searchResultsFactory;
 
     /**
      * SurveyRepository constructor.
@@ -65,7 +65,7 @@ class SurveyRepository implements SurveyRepositoryInterface
         $this->modelFactory =  $modelFactory;
         $this->collectionFactory = $collectionFactory;
         $this->processor = $processor;
-        $this->searchResultFactory = $searchResultsFactory;
+        $this->searchResultsFactory = $searchResultsFactory;
     }
 
     /**
@@ -92,7 +92,7 @@ class SurveyRepository implements SurveyRepositoryInterface
 
         $this->processor->process($criteria, $collection);
 
-        $searchResults = $this->searchResultFactory->create();
+        $searchResults = $this->searchResultsFactory->create();
         $searchResults->setSearchCriteria($criteria);
         $searchResults->setItems($collection->getItems());
         $searchResults->setTotalCount($collection->getSize());
@@ -100,6 +100,25 @@ class SurveyRepository implements SurveyRepositoryInterface
         return $searchResults;
     }
 
+    /**
+     * @param SearchCriteriaInterface $criteria
+     * @return \Magento\Framework\Api\SearchResultsInterface|mixed
+     */
+    public function getListWithStoreSectionNames(SearchCriteriaInterface $criteria)
+    {
+        $collection = $this->collectionFactory->create();
+
+        $this->processor->process($criteria, $collection);
+
+        $collection->joinStoreSectionNames();
+
+        $searchResults = $this->searchResultsFactory->create();
+        $searchResults->setSearchCriteria($criteria);
+        $searchResults->setItems($collection->getItems());
+        $searchResults->setTotalCount($collection->getSize());
+
+        return $searchResults;
+    }
     /**
      * @param int $id
      * @return mixed|void

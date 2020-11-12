@@ -3,7 +3,7 @@
 ?>
 
 <h2>Thank you for taking our survey!</h2>
-<h3>Here are results from others humans: </h3>
+<h3>Here are results from Google friendly people: </h3>
 
 <table>
     <thead>
@@ -22,7 +22,7 @@
             <td><?= __($item->getName()); ?></td>
             <td><?= __($item->getAge()); ?></td>
             <td><?= __($item->getEmail()); ?></td>
-            <td><?= __($item->getFavoriteStoreSection()); ?></td>
+            <td><?= __($item->getStoreSectionName()); ?></td>
             <td><?= __($item->getPaymentMethod()); ?></td>
             <td><?= __($item->getAverageMonthlySpending()); ?></td>
         </tr>

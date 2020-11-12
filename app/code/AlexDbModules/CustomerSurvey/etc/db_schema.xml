@@ -6,7 +6,7 @@
             <column xsi:type="varchar" name="customer_name" length="50" comment="Customer name" />
             <column xsi:type="int" name="customer_age" padding="3" unsigned="true" comment="Customer age" />
             <column xsi:type="varchar" name="customer_email" length="100" comment="Customer email" />
-            <column xsi:type="varchar" name="favorite_store_section" length="50" comment="Favorite store section" />
+            <column xsi:type="int" name="favorite_store_section_id" padding="2" unsigned="true" comment="Favorite store section id" />
             <column xsi:type="varchar" name="preferred_payment_method" length="50" comment="Preferred payment method for making purchases" />
             <column xsi:type="text" name="desirable_store_section" comment="Customers suggestions for store sections" />
             <column xsi:type="varchar" name="average_monthly_spending" length="50" comment="Average monthly amount of money that customer is ready to spend" />
@@ -14,4 +14,13 @@
                 <column name="id" />
             </constraint>
         </table>
+
+        <table name="store_section_names" resource="default" engine="innodb" comment="Table with store sections and people who liked it">
+            <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Primary key" />
+            <column xsi:type="varchar" name="store_section_name" length="100" comment="Name of store section" />
+            <constraint xsi:type='primary' referenceId="PRIMARY" >
+                <column name="id" />
+            </constraint>
+        </table>
 </schema>
+

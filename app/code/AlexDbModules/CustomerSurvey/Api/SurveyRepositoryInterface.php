@@ -17,6 +17,7 @@ use Magento\Framework\Api\SearchCriteriaInterface;
  */
 interface SurveyRepositoryInterface
 {
+
     /**
      * @param int $id
      * @return mixed
@@ -29,6 +30,11 @@ interface SurveyRepositoryInterface
      */
     public function getList(SearchCriteriaInterface $criteria);
 
+    /**
+     * @param SearchCriteriaInterface $criteria
+     * @return mixed
+     */
+    public function getListWithStoreSectionNames(SearchCriteriaInterface $criteria);
     /**
      * @param int $id
      * @return mixed

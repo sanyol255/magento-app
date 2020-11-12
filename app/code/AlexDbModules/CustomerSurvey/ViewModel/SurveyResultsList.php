@@ -40,13 +40,13 @@ class SurveyResultsList implements ArgumentInterface
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
     }
 
+
     /**
      * @return mixed
-     * Getting survey results where age less than 100 years
      */
     public function getSurveyResults()
     {
-        $searchCriteria = $this->searchCriteriaBuilder->addFilter(SurveyInterface::AGE, 100, 'lt')->create();
-        return $this->repository->getList($searchCriteria);
+        $searchCriteria = $this->searchCriteriaBuilder->addFilter(SurveyInterface::EMAIL, '%@gmail.com', 'like')->create();
+        return $this->repository->getListWithStoreSectionNames($searchCriteria);
     }
 }

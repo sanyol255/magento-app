@@ -55,11 +55,11 @@ class Survey extends AbstractModel implements SurveyInterface
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getFavoriteStoreSection(): string
+    public function getFavoriteStoreSectionId(): int
     {
-        return $this->getData(SurveyInterface::FAVORITE_STORE_SECTION);
+        return $this->getData(SurveyInterface::FAVORITE_STORE_SECTION_ID);
     }
 
     /**
@@ -114,12 +114,12 @@ class Survey extends AbstractModel implements SurveyInterface
     }
 
     /**
-     * @param string $favoriteStoreSection
+     * @param int $favoriteStoreSectionId
      * @return SurveyInterface
      */
-    public function setFavoriteStoreSection(string $favoriteStoreSection): SurveyInterface
+    public function setFavoriteStoreSectionId(int $favoriteStoreSectionId): SurveyInterface
     {
-        return $this->setData(SurveyInterface::FAVORITE_STORE_SECTION, $favoriteStoreSection);
+        return $this->setData(SurveyInterface::FAVORITE_STORE_SECTION_ID, $favoriteStoreSectionId);
     }
 
     /**

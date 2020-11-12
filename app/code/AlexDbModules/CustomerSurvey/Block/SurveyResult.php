@@ -24,9 +24,11 @@ class SurveyResult extends Template
      * @var SurveyResultsViewModel
      */
     protected $surveyResultsViewModel;
+
     /**
      * SurveyResult constructor.
      * @param Context $context
+     * @param SurveyResultsViewModel $surveyResultsViewModel
      * @param array $data
      */
     public function __construct(Context $context, SurveyResultsViewModel $surveyResultsViewModel, array $data = [])
