@@ -22,7 +22,7 @@ class SurveyForm extends Template
     /**
      *Path to action for writing form data to database
      */
-    const FORM_ACTION = '/survey/customersurvey/store';
+    const FORM_ACTION = '/customersurvey/survey/store';
     /**
      * SurveyForm constructor.
      * @param Context $context

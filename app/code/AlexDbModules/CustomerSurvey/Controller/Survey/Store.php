@@ -7,7 +7,7 @@
  * @author    Kovalchuk Oleksandr sanyol255@gmail.com
  * @copyright 2020 Alex
  */
-namespace AlexDbModules\CustomerSurvey\Controller\CustomerSurvey;
+namespace AlexDbModules\CustomerSurvey\Controller\Survey;
 
 use AlexDbModules\CustomerSurvey\Api\Data\SurveyInterfaceFactory;
 use AlexDbModules\CustomerSurvey\Api\SurveyRepositoryInterface;
@@ -16,7 +16,7 @@ use Magento\Framework\App\Action\Context;
 
 /**
  * Class Store
- * @package AlexDbModules\CustomerSurvey\Controller\CustomerSurvey
+ * @package AlexDbModules\CustomerSurvey\Controller\Survey
  */
 class Store extends Action
 {
@@ -61,6 +61,6 @@ class Store extends Action
               ->setAverageMonthlySpending($this->getRequest()->getParam('average_monthly_spending'));
         $this->surveyRepository->save($model);
 
-        $this->_redirect('survey/customersurvey/result');
+        $this->_redirect('customersurvey/survey/result');
     }
 }

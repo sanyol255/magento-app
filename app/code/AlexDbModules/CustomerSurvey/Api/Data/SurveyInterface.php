@@ -23,6 +23,7 @@ interface SurveyInterface
     const PAYMENT_METHOD = 'preferred_payment_method';
     const DESIRABLE_STORE_SECTION = 'desirable_store_section';
     const MONTHLY_SPENDING = 'average_monthly_spending';
+    const PAGE_TITLE = 'page_title';
 
     /**
      * @return string
@@ -58,6 +59,11 @@ interface SurveyInterface
      * @return string
      */
     public function getAverageMonthlySpending() : string;
+
+    /**
+     * @return string
+     */
+    public function getPageTitle() : string;
 
     /**
      * @param string $name
@@ -100,4 +106,10 @@ interface SurveyInterface
      * @return $this
      */
     public function setAverageMonthlySpending(string $monthlySpending) : self;
+
+    /**
+     * @param string $pageTitle
+     * @return $this
+     */
+    public function setPageTitle(string $pageTitle) : self;
 }

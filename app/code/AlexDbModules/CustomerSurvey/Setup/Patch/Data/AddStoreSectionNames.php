@@ -17,7 +17,6 @@ class AddStoreSectionNames implements DataPatchInterface
     public function apply()
     {
         $this->dataSetup->startSetup();
-        $setup = $this->dataSetup;
 
         $data[] = ['id' => 1, 'store_section_name' => 'Women'];
         $data[] = ['id' => 2, 'store_section_name' => 'Men'];
@@ -29,6 +28,7 @@ class AddStoreSectionNames implements DataPatchInterface
             ['id', 'store_section_name'],
             $data
         );
+        $this->dataSetup->endSetup();
     }
 
     public function getAliases()

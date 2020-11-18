@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerSurvey/Result Action
+ * CustomerSurvey/Index Action
  *
  * @category  AlexDbModules
  * @package   AlexDbModules\CustomerSurvey
@@ -8,33 +8,34 @@
  * @copyright 2020 Alex
  */
 
-namespace AlexDbModules\CustomerSurvey\Controller\CustomerSurvey;
+namespace AlexDbModules\CustomerSurvey\Controller\Survey;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\View\Result\PageFactory;
 
-
 /**
- * Class Result
- * @package AlexDbModules\CustomerSurvey\Controller\CustomerSurvey
+ * Class Index
+ * @package AlexDbModules\CustomerSurvey\Controller\Survey
  */
-class Result extends Action
+class Index extends Action implements HttpGetActionInterface, HttpPostActionInterface
 {
     /**
      * @var PageFactory
      */
-    protected $surveyResultFactory;
+    protected $surveyFormFactory;
 
     /**
      * Index constructor.
      * @param Context $context
-     * @param PageFactory $surveyResultFactory
+     * @param PageFactory $surveyFormFactory
      */
-    public function __construct(Context $context, PageFactory $surveyResultFactory)
+    public function __construct(Context $context, PageFactory $surveyFormFactory)
     {
         parent::__construct($context);
-        $this->surveyResultFactory = $surveyResultFactory;
+        $this->surveyFormFactory = $surveyFormFactory;
     }
 
     /**
@@ -42,7 +43,7 @@ class Result extends Action
      */
     public function execute()
     {
-        $surveyResult = $this->surveyResultFactory->create();
-        return $surveyResult;
+        $survey = $this->surveyFormFactory->create();
+        return $survey;
     }
 }

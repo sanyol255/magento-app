@@ -1,0 +1,27 @@
+{
+    "customer_survey": {
+        "column": {
+            "id": true,
+            "customer_name": true,
+            "customer_age": true,
+            "customer_email": true,
+            "favorite_store_section_id": true,
+            "preferred_payment_method": true,
+            "desirable_store_section": true,
+            "average_monthly_spending": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "store_section_names": {
+        "column": {
+            "id": true,
+            "store_section_name": true,
+            "store_section_description": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

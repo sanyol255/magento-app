@@ -87,6 +87,14 @@ class Survey extends AbstractModel implements SurveyInterface
     }
 
     /**
+     * @return string
+     */
+    public function getPageTitle(): string
+    {
+        return $this->getData(SurveyInterface::PAGE_TITLE);
+    }
+
+    /**
      * @param string $name
      * @return SurveyInterface
      */
@@ -147,5 +155,10 @@ class Survey extends AbstractModel implements SurveyInterface
     public function setAverageMonthlySpending(string $monthlySpending): SurveyInterface
     {
         return $this->setData(SurveyInterface::MONTHLY_SPENDING, $monthlySpending);
+    }
+
+    public function setPageTitle(string $pageTitle): SurveyInterface
+    {
+        return $this->setData(SurveyInterface::PAGE_TITLE, $pageTitle);
     }
 }
