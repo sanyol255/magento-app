@@ -1,0 +1,26 @@
+<?php
+/* @var AlexDbModules\Contacts\Block\ContactsInfo $block */
+$contacts = $block->showContactsInfo();
+?>
+
+<table>
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Type of contact</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+    <?php foreach ($contacts as $contact) { ?>
+    <tbody>
+        <tr>
+            <td><?=$contact->getId(); ?></td>
+            <td><?=$contact->getContactType(); ?></td>
+            <td><?=$contact->getContact(); ?></td>
+        </tr>
+    </tbody>
+    <?php } ?>
+</table>
+
+
+

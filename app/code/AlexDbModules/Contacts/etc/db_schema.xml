@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="contacts_info" resource="default" engine="innodb" comment="Luma store contacts">
+        <column xsi:type="int" name="contact_id" padding="2" unsigned="true" nullable="false" identity="true" comment="Contacts primary key" />
+        <column xsi:type="varchar" name="contact_type" length="30" comment="Resource for contacting" />
+        <column xsi:type="varchar" name="contact" length="100" comment="Contact" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id" />
+        </constraint>
+    </table>
+</schema>

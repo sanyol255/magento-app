@@ -1,0 +1,12 @@
+{
+    "contacts_info": {
+        "column": {
+            "contact_id": true,
+            "contact_type": true,
+            "contact": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
